@@ -40,9 +40,19 @@ export function getByQuery(req, res) {
     }
 
     // Por nombre 
-    const accountsByName = accounts.filter(acc =>
-        acc.client.toLowerCase().includes(queryParam.toLowerCase())
-    );
+    const accountsByName = accounts.filter(acc => {
+        const clientName = acc.client.toLowerCase();
+        const query = queryParam.toLowerCase();
+        
+        const nameParts = clientName.split(' ');
+        
+        return (
+            clientName === query || // nombre completo exacto
+            nameParts[0] === query || // primer nombre exacto
+            nameParts[nameParts.length - 1] === query || // apellido exacto
+            nameParts.some(part => part === query) // cualquier parte del nombre exacta
+        );
+    });
 
     // Por género 
     const accountsByGender = accounts.filter(acc =>
