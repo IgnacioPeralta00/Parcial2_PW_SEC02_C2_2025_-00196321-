@@ -1,0 +1,25 @@
+{
+  "name": "parcial2_pw_sec02_c2_2025_-00196321-",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IgnacioPeralta00/Parcial2_PW_SEC02_C2_2025_-00196321-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IgnacioPeralta00/Parcial2_PW_SEC02_C2_2025_-00196321-/issues"
+  },
+  "homepage": "https://github.com/IgnacioPeralta00/Parcial2_PW_SEC02_C2_2025_-00196321-#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}
