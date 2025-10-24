@@ -30,7 +30,7 @@ export function getByQuery(req, res) {
         });
     }
 
-    // Por id 
+    // Por ID 
     const accountById = accounts.find(acc => acc._id === queryParam);
     if (accountById) {
         return res.json({
@@ -39,17 +39,17 @@ export function getByQuery(req, res) {
         });
     }
 
-    // nombre 
+    // Por nombre 
     const accountsByName = accounts.filter(acc =>
         acc.client.toLowerCase().includes(queryParam.toLowerCase())
     );
 
-    // genero
+    // Por género 
     const accountsByGender = accounts.filter(acc =>
-        acc.gender.toLowerCase().includes(queryParam.toLowerCase())
+        acc.gender.toLowerCase() === queryParam.toLowerCase()
     );
 
-    // aqui se unen los resultados
+    // Unir resultados
     const allResults = [...accountsByName, ...accountsByGender];
     const uniqueResults = allResults.filter((account, index, self) =>
         index === self.findIndex(a => a._id === account._id)
